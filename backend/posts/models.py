@@ -6,7 +6,7 @@ from django.core.validators import FileExtensionValidator
 class Post(models.Model):
     title = models.CharField(max_length=200)
     body = models.TextField()
-    date = models.DateTimeField(auto_now_add=True)
+    date = models.DateTimeField(editable=True)
     image = models.ImageField(default='default.png', upload_to='pimages', validators=[FileExtensionValidator(['png', 'jpg', 'jpeg'])])
 
     class Meta:
