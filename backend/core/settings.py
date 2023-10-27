@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     "corsheaders",
+    'ckeditor',
+    'ckeditor_uploader',
     'posts',
     'projects',
 ]
@@ -135,3 +137,21 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATIC_ROOT = (BASE_DIR / 'asset')
+
+CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
+
+CKEDITOR_UPLOAD_PATH = 'uploads/'  # Define the path where uploaded files will be stored.
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'  # Set jQuery URL.
+CKEDITOR_ALLOW_NONIMAGE_FILES = False  # Disallow non-image file uploads.
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', 'Blockquote'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat'],
+        ],
+    },
+}
